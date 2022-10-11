@@ -1,0 +1,17 @@
+# Files
+*.db
+*.log
+*.md
+*.xml
+*.class
+*.json
+*.iml
+
+# But not
+!pom.xml
+!src/test/resources/testng.xml
+
+# Folders
+bin/
+target/
+.idea/
