@@ -1,12 +1,14 @@
 import org.junit.jupiter.api.Test;
 import pages.ContactUsPage;
 
+import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class ContactUsTests extends BaseTest{
+class ContactUsTests extends BaseTest {
 
     ContactUsPage contactUsPage = new ContactUsPage(chromeDriver);
+    Map<String, String> epamAddress = ContactUsPage.getAddress();
 
     @Test
     void verifyAddressMatchesRegex() {
@@ -18,31 +20,31 @@ class ContactUsTests extends BaseTest{
 
     @Test
     void verifyStreetMatchesGivenValue() {
-        assertEquals("41 University Drive", ContactUsPage.getAddress().get("Street:"));
+        assertEquals("41 University Drive", epamAddress.get("Street:"));
     }
 
     @Test
     void verifyApartmentMatchesGivenValue() {
-        assertEquals("Suite 202", ContactUsPage.getAddress().get("Apartment:"));
+        assertEquals("Suite 202", epamAddress.get("Apartment:"));
     }
 
     @Test
     void verifyCityMatchesGivenValue() {
-        assertEquals("Newtown", ContactUsPage.getAddress().get("City:"));
+        assertEquals("Newtown", epamAddress.get("City:"));
     }
 
     @Test
     void verifyStateMatchesGivenValue() {
-        assertEquals("PA", ContactUsPage.getAddress().get("State:"));
+        assertEquals("PA", epamAddress.get("State:"));
     }
 
     @Test
     void verifyPostalCodeMatchesGivenValue() {
-        assertEquals("18940", ContactUsPage.getAddress().get("Postal Code:"));
+        assertEquals("18940", epamAddress.get("Postal Code:"));
     }
 
     @Test
     void verifyCountryMatchesGivenValue() {
-        assertEquals("USA", ContactUsPage.getAddress().get("Country:"));
+        assertEquals("USA", epamAddress.get("Country:"));
     }
 }

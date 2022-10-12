@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class ContactUsPage extends BasePage{
+public class ContactUsPage extends BasePage {
     @FindBy (xpath = "//span[@class='font-size-22']")
     private static WebElement address;
     private static final Map<String, String> structuredAddress = new HashMap<>();
